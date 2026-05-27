@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stitch Mien | Draped In Elegance</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--black:#050505;
+--gold:#c7a86d;
+--ivory:#f7f3ed;
+--soft:#b7b7b7;
+--card:#101010;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+background:rgba(5,5,5,0.95);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(199,168,109,0.2);
+padding:1.2rem 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-family:'Cormorant Garamond',serif;
+font-size:1.8rem;
+font-weight:700;
+color:var(--gold);
+letter-spacing:2px;
+text-decoration:none;
+white-space:nowrap;
+}
+
+.nav-links{
+display:flex;
+gap:2.5rem;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--ivory);
+font-size:1rem;
+font-weight:500;
+position:relative;
+transition:0.3s;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+bottom:-5px;
+left:0;
+width:0;
+height:2px;
+background:var(--gold);
+transition:width 0.3s ease;
+}
+
+.nav-links a:hover{
+color:var(--gold);
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+@media(max-width:1024px){
+nav{
+padding:1rem 5%;
+}
+
+.logo{
+font-size:1.5rem;
+}
+
+.nav-links{
+gap:2rem;
+}
+
+.nav-links a{
+font-size:0.95rem;
+}
+}
+
+@media(max-width:768px){
+nav{
+padding:0.9rem 5%;
+flex-wrap:wrap;
+justify-content:space-between;
+}
+
+.logo{
+font-size:1.4rem;
+}
+
+.nav-links{
+gap:1.2rem;
+}
+
+.nav-links a{
+font-size:0.85rem;
+}
+}
+
+@media(max-width:480px){
+nav{
+padding:0.8rem 4%;
+}
+
+.logo{
+font-size:1.1rem;
+letter-spacing:1px;
+}
+
+.nav-links{
+gap:1rem;
+}
+
+.nav-links a{
+font-size:0.75rem;
+}
+}
+
+body{
+background:var(--black);
+color:var(--ivory);
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
+}
+
+body::-webkit-scrollbar{
+width:10px;
+}
+
+body::-webkit-scrollbar-track{
+background:rgba(199,168,109,0.05);
+}
+
+body::-webkit-scrollbar-thumb{
+background:var(--gold);
+border-radius:5px;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+background:rgba(199,168,109,0.8);
+}
+
+section{
+padding:100px 8%;
+}
+
+@media(max-width:768px){
+section{
+padding:60px 5%;
+}
+}
+
+@media(max-width:480px){
+section{
+padding:40px 4%;
+}
+}
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+font-weight:700;
+}
+
+p{
+line-height:1.8;
+color:var(--soft);
+}
+
+.fade{
+opacity:0;
+transform:translateY(50px);
+transition:1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+background:
+linear-gradient(
+135deg,
+#050505 0%,
+#1a1a1a 50%,
+#050505 100%
+);
+margin-top:70px;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:200%;
+height:200%;
+background:
+radial-gradient(
+circle at center,
+rgba(199,168,109,.15),
+transparent 60%
+);
+animation:fabric 20s linear infinite;
+opacity:0.8;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:
+radial-gradient(
+ellipse at bottom,
+rgba(199,168,109,.08),
+transparent 50%
+);
+animation:pulse 4s ease-in-out infinite;
+}
+
+@keyframes fabric{
+0%{
+transform:rotate(0deg);
+}
+100%{
+transform:rotate(360deg);
+}
+}
+
+@keyframes pulse{
+0%,100%{
+opacity:0.5;
+}
+50%{
+opacity:1;
+}
+}
+
+.hero-content{
+z-index:2;
+max-width:800px;
+padding:20px;
+animation:slideUp 1.2s ease-out;
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero h1{
+font-size:6rem;
+letter-spacing:3px;
+color:var(--ivory);
+font-weight:700;
+text-shadow:0 10px 30px rgba(199,168,109,.2);
+margin-bottom:10px;
+}
+
+.hero h1 span{
+color:var(--gold);
+background:linear-gradient(135deg, var(--gold), #e5c89a);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+}
+
+.tagline{
+font-family:'Cormorant Garamond';
+font-size:2rem;
+font-style:italic;
+margin:15px 0;
+color:var(--gold);
+font-weight:300;
+letter-spacing:1px;
+}
+
+.hero p{
+max-width:650px;
+margin:auto;
+font-size:1.1rem;
+line-height:1.9;
+color:rgba(247,243,237,0.8);
+}
+
+@media(max-width:1024px){
+.hero h1{
+font-size:5rem;
+}
+
+.tagline{
+font-size:1.7rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:3.5rem;
+}
+
+.tagline{
+font-size:1.3rem;
+}
+
+.hero p{
+font-size:0.95rem;
+}
+}
+
+@media(max-width:480px){
+.hero h1{
+font-size:2.2rem;
+letter-spacing:2px;
+}
+
+.tagline{
+font-size:1rem;
+margin:10px 0;
+}
+
+.hero p{
+font-size:0.85rem;
+line-height:1.6;
+}
+
+.hero-content{
+padding:10px;
+}
+}
+
+.scroll{
+position:absolute;
+bottom:35px;
+left:50%;
+transform:translateX(-50%);
+font-size:.9rem;
+letter-spacing:3px;
+color:var(--gold);
+animation:bounce 2.5s ease-in-out infinite;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+.scroll{
+font-size:0.75rem;
+bottom:30px;
+}
+}
+
+@media(max-width:480px){
+.scroll{
+font-size:0.7rem;
+bottom:25px;
+letter-spacing:2px;
+}
+}
+
+@keyframes bounce{
+0%,100%{
+transform:
+translateX(-50%)
+translateY(0);
+opacity:1;
+}
+50%{
+transform:
+translateX(-50%)
+translateY(15px);
+opacity:0.6;
+}
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+scroll-margin-top:100px;
+}
+
+@media(max-width:900px){
+.about{
+grid-template-columns:1fr;
+gap:40px;
+}
+}
+
+@media(max-width:768px){
+.about{
+gap:30px;
+}
+}
+
+.owner-photo{
+height:500px;
+background:
+url("https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80")
+center/cover;
+border-radius:20px;
+box-shadow:
+0 0 80px rgba(199,168,109,.25),
+0 20px 60px rgba(0,0,0,0.5);
+border:1px solid rgba(199,168,109,0.2);
+transition:0.5s;
+}
+
+.owner-photo:hover{
+transform:scale(1.02);
+box-shadow:
+0 0 100px rgba(199,168,109,.35),
+0 30px 80px rgba(0,0,0,0.6);
+}
+
+@media(max-width:900px){
+.owner-photo{
+height:400px;
+}
+}
+
+@media(max-width:768px){
+.owner-photo{
+height:350px;
+}
+}
+
+@media(max-width:480px){
+.owner-photo{
+height:280px;
+border-radius:15px;
+}
+}
+
+.section-title{
+font-size:3.5rem;
+margin-bottom:20px;
+line-height:1.2;
+font-weight:700;
+}
+
+@media(max-width:1024px){
+.section-title{
+font-size:3rem;
+}
+}
+
+@media(max-width:768px){
+.section-title{
+font-size:2.3rem;
+}
+}
+
+@media(max-width:480px){
+.section-title{
+font-size:1.8rem;
+margin-bottom:15px;
+}
+}
+
+.gold{
+color:var(--gold);
+background:linear-gradient(135deg, #c7a86d, #e5c89a);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+}
+
+/* GALLERY */
+
+.gallery-header{
+text-align:center;
+margin-bottom:70px;
+scroll-margin-top:100px;
+}
+
+.gallery-header h2{
+font-size:3.5rem;
+margin-bottom:15px;
+}
+
+.gallery-header p{
+font-size:1.1rem;
+max-width:600px;
+margin:0 auto;
+}
+
+.gallery{
+column-count:3;
+column-gap:30px;
+}
+
+@media(max-width:1200px){
+.gallery{
+column-count:2;
+column-gap:25px;
+}
+}
+
+@media(max-width:768px){
+.gallery{
+column-count:1;
+column-gap:20px;
+}
+
+.gallery-header h2{
+font-size:2.5rem;
+}
+
+.gallery-header p{
+font-size:1rem;
+}
+
+.card video{
+height:clamp(200px, 45vw, 320px);
+}
+}
+
+
+@media(max-width:480px){
+.gallery-header h2{
+font-size:2rem;
+}
+
+.gallery-header p{
+font-size:0.95rem;
+}
+}
+
+.card{
+background:linear-gradient(135deg, var(--card), #151515);
+margin-bottom:30px;
+border-radius:18px;
+overflow:hidden;
+break-inside:avoid;
+transition:0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+border:1px solid rgba(199,168,109,.15);
+}
+
+.card:hover{
+transform:translateY(-12px) scale(1.01);
+box-shadow:
+0 30px 60px rgba(199,168,109,.2),
+0 0 40px rgba(199,168,109,.1);
+border-color:rgba(199,168,109,.4);
+}
+
+@media(max-width:768px){
+.card{
+margin-bottom:20px;
+border-radius:15px;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.005);
+}
+}
+
+@media(max-width:480px){
+.card{
+margin-bottom:15px;
+border-radius:12px;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+}
+
+.card img{
+width:100%;
+display:block;
+transition:0.5s;
+max-height:400px;
+object-fit:cover;
+}
+
+.card video{
+width:100%;
+display:block;
+transition:0.5s;
+
+/* Keep videos responsive but not oversized */
+height:clamp(220px, 35vw, 360px);
+object-fit:cover;
+}
+
+
+
+.card:hover img,
+.card:hover video{
+filter:brightness(1.1);
+}
+
+.card-content{
+padding:30px;
+}
+
+.card h3{
+font-size:2rem;
+margin-bottom:10px;
+color:var(--ivory);
+}
+
+@media(max-width:768px){
+.card-content{
+padding:20px;
+}
+
+.card h3{
+font-size:1.5rem;
+}
+}
+
+@media(max-width:480px){
+.card-content{
+padding:15px;
+}
+
+.card h3{
+font-size:1.2rem;
+}
+}
+
+.delete-btn{
+margin-top:18px;
+padding:10px 16px;
+background:#751616;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+display:none;
+
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+border-top:1px solid rgba(199,168,109,.2);
+scroll-margin-top:100px;
+}
+
+.contact h2{
+margin-bottom:30px;
+}
+
+.contact p{
+font-size:1.1rem;
+margin-bottom:30px;
+line-height:2;
+}
+
+.socials{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.socials a{
+text-decoration:none;
+color:var(--gold);
+transition:0.3s;
+font-weight:600;
+font-size:1.05rem;
+position:relative;
+}
+
+.socials a::before{
+content:'';
+position:absolute;
+bottom:-8px;
+left:0;
+width:100%;
+height:2px;
+background:var(--gold);
+transform:scaleX(0);
+transform-origin:right;
+transition:transform 0.3s ease;
+}
+
+.socials a:hover::before{
+transform:scaleX(1);
+transform-origin:left;
+}
+
+.socials a:hover{
+color:#e5c89a;
+}
+
+@media(max-width:768px){
+.contact p{
+font-size:1rem;
+line-height:1.8;
+}
+
+.socials{
+gap:20px;
+}
+
+.socials a{
+font-size:1rem;
+}
+}
+
+@media(max-width:480px){
+.contact p{
+font-size:0.9rem;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.socials{
+gap:15px;
+}
+
+.socials a{
+font-size:0.9rem;
+}
+}
+
+/* LOGIN */
+
+.owner-link{
+
+text-align:center;
+
+padding:40px;
+
+font-size:.8rem;
+
+opacity:.4;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.owner-link:hover{
+opacity:1;
+}
+
+.panel{
+
+display:none;
+
+padding:50px;
+
+background:#090909;
+
+border-top:
+1px solid rgba(255,255,255,.08);
+
+}
+
+.login-box,
+.admin-box{
+
+max-width:500px;
+
+margin:auto;
+
+}
+
+input,
+textarea{
+width:100%;
+padding:16px;
+background:#111;
+border:none;
+color:white;
+margin:12px 0;
+border-radius:12px;
+outline:none;
+font-size:1rem;
+}
+
+@media(max-width:768px){
+input,
+textarea{
+padding:14px;
+margin:10px 0;
+font-size:0.95rem;
+}
+}
+
+@media(max-width:480px){
+input,
+textarea{
+padding:12px;
+margin:8px 0;
+font-size:0.9rem;
+}
+}
+
+button{
+
+background:var(--gold);
+
+color:black;
+
+padding:15px 30px;
+
+border:none;
+
+font-weight:700;
+
+cursor:pointer;
+
+border-radius:40px;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+}
+
+@media(max-width:768px){
+button{
+padding:12px 24px;
+font-size:0.95rem;
+}
+}
+
+@media(max-width:480px){
+button{
+padding:10px 20px;
+font-size:0.85rem;
+width:100%;
+}
+}
+
+#preview{
+margin-top:20px;
+width:100%;
+border-radius:15px;
+display:none;
+max-width:100%;
+height:auto;
+background:#000;
+}
+
+
+#videoPreview{
+margin-top:20px;
+width:100%;
+border-radius:15px;
+display:none;
+max-width:100%;
+height:clamp(180px, 30vw, 300px);
+object-fit:cover;
+background:#000;
+}
+
+
+
+/* RESPONSIVE - LARGE SCREENS */
+
+@media(max-width:1200px){
+.hero{
+margin-top:70px;
+}
+}
+
+/* RESPONSIVE - MEDIUM SCREENS (TABLET) */
+
+@media(max-width:900px){
+.about{
+grid-template-columns:1fr;
+}
+
+.gallery{
+column-count:2;
+}
+
+.hero h1{
+font-size:4rem;
+}
+
+.section-title{
+font-size:2.8rem;
+}
+
+.hero{
+margin-top:70px;
+}
+}
+
+@media(max-width:768px){
+.gallery{
+column-count:1;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.tagline{
+font-size:1.5rem;
+}
+
+.hero{
+margin-top:80px;
+}
+
+.owner-photo{
+height:350px;
+}
+
+#preview{
+max-height:300px;
+}
+
+#videoPreview{
+max-height:300px;
+}
+}
+
+/* RESPONSIVE - SMALL SCREENS (MOBILE) */
+
+@media(max-width:650px){
+.gallery{
+column-count:1;
+}
+
+.card video{
+height:clamp(190px, 50vw, 280px);
+}
+
+
+.hero h1{
+font-size:2rem;
+}
+
+.tagline{
+font-size:1.2rem;
+}
+
+.section-title{
+font-size:2rem;
+}
+
+.socials{
+flex-direction:column;
+gap:15px;
+}
+
+.owner-photo{
+height:280px;
+}
+
+#preview{
+max-height:250px;
+}
+
+#videoPreview{
+max-height:250px;
+}
+}
+
+@media(max-width:480px){
+.hero h1{
+font-size:1.8rem;
+}
+
+.tagline{
+font-size:1rem;
+}
+
+.section-title{
+font-size:1.5rem;
+}
+
+.card h3{
+font-size:1.2rem;
+}
+
+.owner-photo{
+height:240px;
+}
+
+#preview{
+max-height:200px;
+}
+
+#videoPreview{
+max-height:200px;
+}
+
+.hero::before{
+width:150%;
+height:150%;
+}
+}
+
+/* ORDERING SYSTEM ADDITIONS */
+.cart-icon {
+font-size: 1.5rem;
+cursor: pointer;
+position: relative;
+
+user-select: none;
+color: var(--gold);
+margin-left: 2rem;
+}
+.cart-badge {
+position: absolute;
+top: -5px;
+right: -10px;
+background-color: #EF4444;
+color: white;
+font-size: 0.75rem;
+font-weight: 700;
+padding: 2px 6px;
+border-radius: 9999px;
+display: none;
+}
+.order-btn {
+margin-top: 15px;
+padding: 10px 16px;
+background: var(--gold);
+color: var(--black);
+border: none;
+border-radius: 30px;
+cursor: pointer;
+font-weight: 600;
+transition: 0.3s;
+width: 100%;
+}
+.order-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(199,168,109,0.3);
+}
+/* Modals */
+.modal-overlay { position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 2000; padding: 1rem; }
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal-content { background: var(--card); border: 1px solid rgba(199,168,109,0.3); color: var(--ivory); width: 100%; max-width: 500px; max-height: 90vh; border-radius: 1rem; padding: 1.5rem; overflow-y: auto; transform: scale(0.95); transition: transform 0.3s; }
+.modal-overlay.active .modal-content { transform: scale(1); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.modal-title { font-size: 1.25rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif; }
+.close-btn { background: none; border: none; font-size: 1.5rem; color: var(--soft); cursor: pointer; }
+.close-btn:hover { color: var(--gold); }
+.cart-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid rgba(199,168,109,0.2); }
+.cart-item:last-child { border-bottom: none; }
+.cart-item-title { font-weight: 600; margin-bottom: 0.25rem; }
+.cart-item-price { color: var(--gold); font-size: 0.875rem; }
+.cart-controls { display: flex; align-items: center; gap: 0.75rem; }
+.cart-controls button { width: 32px; height: 32px; border-radius: 0.25rem; border: 1px solid var(--gold); background: transparent; color: var(--gold); cursor: pointer; display: flex; justify-content: center; align-items: center; font-weight: bold; }
+.cart-controls button:hover { background: var(--gold); color: var(--black); }
+.cart-total { font-size: 1.25rem; font-weight: 700; text-align: right; margin: 1.5rem 0; padding-top: 1rem; border-top: 1px solid rgba(199,168,109,0.2); color: var(--gold); }
+.form-group { margin-bottom: 1rem; text-align: left; }
+.form-label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--ivory); }
+.form-control { width: 100%; padding: 0.75rem; background: #111; border: 1px solid rgba(199,168,109,0.3); color: white; border-radius: 0.5rem; font-size: 1rem; }
+.form-control:focus { outline: none; border-color: var(--gold); }
+textarea.form-control { resize: vertical; }
+.btn-proceed { background-color: var(--gold); color: var(--black); width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.2s; }
+.btn-proceed:hover { transform: translateY(-2px); }
+.btn-proceed:disabled { background-color: #555; cursor: not-allowed; transform: none; }
+.btn-whatsapp { background-color: #25D366; color: white; width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.2s; }
+.btn-whatsapp:hover { background-color: #16a34a; }
+
+/* 3D CAROUSEL & GLASSMORPHISM */
+.custom-cursor {
+position: fixed;
+top: 0;
+left: 0;
+width: 15px;
+height: 15px;
+background: var(--gold);
+border-radius: 50%;
+pointer-events: none;
+z-index: 9999;
+mix-blend-mode: difference;
+transform: translate(-50%, -50%);
+transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s;
+display: none;
+}
+@media(hover: hover) and (pointer: fine) {
+.custom-cursor { display: block; }
+}
+.custom-cursor.active {
+width: 50px;
+height: 50px;
+background: transparent;
+border: 2px solid var(--gold);
+mix-blend-mode: normal;
+}
+
+.carousel-section {
+padding: 100px 0;
+overflow: hidden;
+position: relative;
+background: linear-gradient(180deg, var(--black) 0%, #080808 100%);
+}
+.carousel-wrapper {
+width: 100%;
+overflow: hidden;
+perspective: 1500px; /* Enables 3D space */
+}
+.carousel-track {
+display: flex;
+gap: 30px;
+width: max-content;
+padding: 40px 5vw;
+transform-style: preserve-3d;
+}
+.glass-card {
+width: clamp(280px, 25vw, 400px);
+background: rgba(255, 255, 255, 0.03);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(199, 168, 109, 0.15);
+border-radius: 20px;
+padding: 15px;
+flex-shrink: 0;
+cursor: pointer;
+transform-style: preserve-3d;
+transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.6s;
+}
+.glass-card:hover {
+transform: translateY(-20px) rotateX(8deg) rotateY(-5deg);
+box-shadow: -15px 30px 50px rgba(0,0,0,0.8), 0 0 40px rgba(199, 168, 109, 0.25);
+border-color: rgba(199, 168, 109, 0.5);
+}
+.glass-img-wrapper {
+width: 100%;
+height: clamp(350px, 40vh, 450px);
+border-radius: 15px;
+overflow: hidden;
+margin-bottom: 20px;
+transform: translateZ(40px); /* 3D pop separation */
+}
+.glass-img-wrapper img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.glass-card:hover .glass-img-wrapper img {
+transform: scale(1.1);
+}
+.glass-info {
+transform: translateZ(30px);
+text-align: center;
+padding: 0 10px 10px;
+}
+.glass-info h3 {
+font-size: 1.6rem;
+color: var(--ivory);
+margin-bottom: 8px;
+font-family: 'Cormorant Garamond', serif;
+}
+.glass-info p {
+color: var(--gold);
+font-weight: 500;
+font-size: 1.1rem;
+}
+</style>
+<style>
+/* OVERRIDES FOR LUXURY DARK THEME */
+body { font-family: 'Montserrat', sans-serif; }
+h1, h2, h3, .logo, .modal-title, .cart-item-title, .cart-total { font-family: 'Playfair Display', serif !important; }
+.logo { text-transform: uppercase; letter-spacing: 2px; }
+nav { padding: 1.2rem 5% !important; }
+.nav-links a { text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem !important; }
+.cart-icon { font-size: 1.2rem; }
+.cart-badge { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+.hero::before, .hero::after { display: none !important; }
+.hero h1 { font-size: 4.5rem !important; text-transform: uppercase; letter-spacing: 2px !important; }
+.hero p { font-size: 1.1rem !important; max-width: 600px; }
+.shop-now-hero { display: inline-block; padding: 1rem 3rem; background: var(--gold); color: var(--black); text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 2rem; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+.shop-now-hero:hover { background: #e5c89a; transform: translateY(-2px); }
+.scroll { font-family: 'Montserrat', sans-serif; letter-spacing: 2px !important; }
+.section-title { text-transform: uppercase; letter-spacing: 2px !important; font-size: 2.5rem !important; margin-bottom: 15px !important; }
+.gallery-header p { font-size: 1rem !important; margin-bottom: 3rem !important; }
+.carousel-track, .gallery { display: grid !important; grid-template-columns: repeat(5, 1fr) !important; gap: 20px !important; width: 100% !important; padding: 0 !important; transform: none !important; }
+@media(max-width:1200px){ .carousel-track, .gallery { grid-template-columns: repeat(4, 1fr) !important; } }
+@media(max-width:900px){ .carousel-track, .gallery { grid-template-columns: repeat(3, 1fr) !important; } }
+@media(max-width:600px){ .carousel-track, .gallery { grid-template-columns: repeat(2, 1fr) !important; } }
+.glass-card, .card { border-radius: 0 !important; backdrop-filter: none !important; margin-bottom: 20px; transition: 0.4s !important; cursor: pointer; }
+.glass-card:hover, .card:hover { transform: translateY(-8px) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.4) !important; }
+.glass-img-wrapper, .card img, .card video { height: 250px !important; border-radius: 0 !important; transform: none !important; overflow: hidden; margin-bottom: 1rem; position: relative; width: 100%; display: block; }
+.glass-img-wrapper img, .glass-img-wrapper video, .card img, .card video { width: 100%; height: 100% !important; object-fit: cover; transition: transform 0.8s ease !important; }
+.glass-card:hover .glass-img-wrapper img, .card:hover img { transform: scale(1.05) !5, 1fr) !important; gap: 20px !important; width: 100% !important; padding: 0 !important; transform: none !important; }
+@media(max-width:1200px){ .carousel-track, .gallery { grid-template-columns: repeat(4, 1fr) !important; } }
+.product-category { fotsize: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--soft); margin-m: px; font-family: 'Montserra', sans-serif; font-eight: 500; }
+@media(max-width:900px){ .carousel-track, .gallery { grid-template-columns: repeat(3, 1fr) !important; } }
+@media(max-width:600px){ .carousel-track, .gallery { grid-template-columns: repeat(2, 1fr) !important; } }
+.glass-card, .card { border-radius: 0 !important; backdrop-filter: none !important; margin-bottom: 20px; transition: 0.4s !important; cursor: pointer; }
+.glass-card:hover, .card:hover { transform: translateY(-8px) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.4)t; } !important; }
+.glass-conteni { border-radius: 0 !mmporgant; padding: 2.5rem !important; }
+.modal-tit-wrapper, .card img, .card video { height: 250px !impo
+.cart-item { border-bottom: 1px solid rgba(199,168,109,0.2) !important; }
+.cart-controls button { border-radius: r !imtortant; ant; border-radius: 0 !important; transform: none !important; overflow: hidden; margin-bottom: 1rem; position: relative; width: 100%; display: block; }
+.glass-img-wrapper img, .glass-img-wrapper video, .card img, .card video { width: 100%; height: 100% !important; object-fit: cover; transition: transform 0.8s ease !important; }
+.glass-card:hover .glass-img-wrapper img, .card:hover img { transform: scale(1.05) !5, 1fr) !important; gap: 20px !important; width: 100% !important; padding: 0 !important; transform: none !important; }
+@media(max-width:1200px){ .carousel-track, .gallery { grid-template-columns: repeat(4, 1fr) !important; } }
+.product-category { fotsize: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--soft); margin-m: px; font-family: 'Montserra', sans-serif; font-eight: 500; }
+@media(max-width:900px){ .carousel-track, .gall
+.socials a:hover { border-bottom-color: var(--gold) !importaet; }ry { grid-template-columns: repeat(3, 1fr) !important; } }
+@mustom-cursor { displey: none !impodtant; }
+.caria(max-width:600px){ .carousel-track, .gallery { grid-template-columns: repeat(2, 1fr) !important; } }
+.glass-card, .card { border-radius: 0 !important; backdrop-filter: none !important; margin-bottom: 20px; transition: 0.4s !important; cursor: pointer; }
+.glass-card:hover, .card:hover { transform: translateY(-8px) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.4)t; } !important; }
+.glass-conteni { border-radius: 0 !mmporgant; padding: 2.5rem !important; }
+.modal-tit-wrapper, .card img, .card video { height: 250px !impo
+.cart-item { border-bottom: 1px solid rgba(199,168,109,0.2) !important; }
+.cart-controls button { border-radius: r !imtortant; ant; border-radius: 0 !important; transform: none !important; overflow: hidden; margin-bottom: 1rem; position: relative; width: 100%; display: block; }
+.glass-img-wrapper img, .glass-img-wrapper video, .card img, .card video { width: 100%; height: 100% !important; object-fit: cover; transition: transform 0.8s ease !important; }
+.glass-card:hover .glass-img-wrapper img, .card:hover img { transform: scale(1.05) !5, 1fr) !important; gap: 20px !important; width: 100% !important; padding: 0 !important; transform: none !important; }
+@media(max-width:1200px){ .carousel-track, .gallery { grid-template-columns: repeat(4, 1fr) !important; } }
+.product-category { fotsize: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--soft); margin-m: px; font-family: 'Montserra', sans-serif; font-eight: 500; }
+@media(max-width:900px){ .carousel-track, .gall
+.socials a:hover { border-bottom-color: var(--gold) !importaet; }ry { grid-template-columns: repeat(3, 1fr) !important; } }
+@mustom-cursor { displey: none !impodtant; }
+.caria(max-width:600px){ .carousel-track, .gallery { grid-template-columns: repeat(2, 1fr) !important; } }
+.glass-card, .card { border-radius: 0 !important; backdrop-filter: none !important; margin-bottom: 20px; transition: 0.4s !important; cursor: pointer; }
+.glass-card:hover, .card:hover { transform: translateY(-8px) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.4)t; } !important; }
+.glass-conteni { border-radius: 0 !mmporgant; padding: 2.5rem !important; }
+.modal-tit-wrapper, .card img, .card video { height: 250px !impo
+.cart-item { border-bottom: 1px solid rgba(199,168,109,0.2) !important; }
+.cart-controls button { border-radius: r !imtortant; ant; border-radius: 0 !important; transform: none !important; overflow: hidden; margin-bottom: 1rem; position: relative; width: 100%; display: block; }
+.glass-img-wrapper img, .glass-img-wrapper video, .card img, .card video { width: 100%; height: 100% !important; object-fit: cover; transition: transform 0.8s ease !important; }
+.glass-card:hover .glass-img-wrapper img, .card:hover img { transform: scale(1.05) !5, 1fr) !important; gap: 20px !important; width: 100% !important; padding: 0 !important; transform: none !important; }
+@media(max-width:1200px){ .carousel-track, .gallery { grid-template-columns: repeat(4, 1fr) !important; } }
+.product-category { fotsize: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--soft); margin-m: px; font-family: 'Montserra', sans-serif; font-eight: 500; }
+@media(max-width:900px){ .carousel-track, .gall
+.socials a:hover { border-bottom-color: var(--gold) !importaet; }ry { grid-template-columns: repeat(3, 1fr) !important; } }
+@mustom-cursor { displey: none !impodtant; }
+.caria(max-width:600px){ .carousel-track, .gallery { grid-template-columns: repeat(2, 1fr) !important; } }
+.glass-card, .card { border-radius: 0 !important; backdrop-filter: none !important; margin-bottom: 20px; transition: 0.4s !important; cursor: pointer; }
+.glass-card:hover, .card:hover { transform: translateY(-8px) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.4)t; } !important; }
+.glass-conteni { border-radius: 0 !mmporgant; padding: 2.5rem !important; }
+.modal-tit-wrapper, .card img, .card video { height: 250px !impo
+.cart-item { border-bottom: 1px solid rgba(199,168,109,0.2) !important; }
+.cart-controls button { border-radius: r !imtortant; ant; border-radius: 0 !important; transform: none !important; overflow: hidden; margin-bottom: 1rem; position: relative; width: 100%; display: block; }
+.glass-img-wrapper img, .glass-img-wrapper video, .card img, .card video { width: 100%; height: 100% !important; object-fit: cover; transition: transform 0.8s ease !important; }
+.glass-card:hover .glass-img-wrapper img, .card:hover img { transform: scale(1.05) !5, 1fr) !important; gap: 20px !important; width: 100% !important; padding: 0 !important; transform: none !important; }
+@media(max-width:1200px){ .carousel-track, .gallery { grid-template-columns: repeat(4, 1fr) !important; } }
+.product-category { fotsize: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--soft); margin-m: px; font-family: 'Montserra', sans-serif; font-eight: 500; }
+@media(max-width:900px){ .carousel-track, .gall
+.socials a:hover { border-bottom-color: var(--gold) !importaet; }ry { grid-template-columns: repeat(3, 1fr) !important; } }
+@mustom-cursor { displey: none !impodtant; }
+.caria(max-width:600px){ .carousel-track, .gallery { grid-template-columns: repeat(2, 1fr) !important; } }
+.glass-card, .card { border-radius: 0 !important; backdrop-filter: none !important; margin-bottom: 20px; transition: 0.4s !important; cursor: pointer; }
+.glass-card:hover, .card:hover { transform: translateY(-8px) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.4)t; } !important; }
+.glass-conteni { border-radius: 0 !mmporgant; padding: 2.5rem !important; }
+.modal-tit-wrapper, .card img, .card video { height: 250px !impo
+.cart-item { border-bottom: 1px solid rgba(199,168,109,0.2) !important; }
+.cart-controls button { border-radius: r !imtortant; ant; border-radius: 0 !important; transform: none !important; overflow: hidden; margin-bottom: 1rem; position: relative; width: 100%; display: block; }
+.glass-img-wrapper img, .glass-img-wrapper video, .card img, .card video { width: 100%; height: 100% !important; object-fit: cover; transition: transform 0.8s ease !important; }
+.glass-card:hover .glass-img-wrapper img, .card:hover img { transform: scale(1.05) !5, 1fr) !important; gap: 20px !important; width: 100% !important; padding: 0 !important; transform: none !important; }
+@media(max-width:1200px){ .carousel-track, .gallery { grid-template-columns: repeat(4, 1fr) !important; } }
+.product-category { fotsize: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--soft); margin-m: px; font-family: 'Montserra', sans-serif; font-eight: 500; }
+@media(max-width:900px){ .carousel-track, .gall
+.socials a:hover { border-bottom-color: var(--gold) !importaet; }ry { grid-template-columns: repeat(3, 1fr) !important; } }
+@mustom-cursor { displey: none !impodtant; }
+.caria(max-width:600px){ .carousel-track, .gallery { grid-template-columns: repeat(2, 1fr) !important; } }
+.glass-card, .card { border-radius: 0 !important; backdrop-filter: none !important; margin-bottom: 20px; transition: 0.4s !important; cursor: pointer; }
+.glass-card:hover, .card:hover { transform: translateY(-8px) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.4)t; } !important; }
+.glass-conteni { border-radius: 0 !mmporgant; padding: 2.5rem !important; }
+.modal-tit-wrapper, .card img, .card video { height: 250px !impo
+.cart-item { border-bottom: 1px solid rgba(199,168,109,0.2) !important; }
+.cart-controls button { border-radius: r !imtortant; ant; border-radius: 0 !important; transform: none !important; overflow: hidden; margin-bottom: 1rem; position: relative; width: 100%; display: block; }
+.glass-img-wrapper img, .glass-img-wrapper video, .card img, .card video { width: 100%; height: 100% !important; object-fit: cover; transition: transform 0.8s ease !important; }
+.glass-card:hover .glass-img-wrapper img, .card:hover img { transform: scale(1.05) !5, 1fr) !important; gap: 20px !important; width: 100% !important; padding: 0 !important; transform: none !important; }
+@media(max-width:1200px){ .carousel-track, .gallery { grid-template-columns: repeat(4, 1fr) !important; } }
+.product-category { fotsize: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--soft); margin-m: px; font-family: 'Montserra', sans-serif; font-eight: 500; }
+@media(max-width:900px){ .carousel-track, .gall
+.socials a:hoveollections">New Arrivals</a></li>
+<li><a href="#about">Abrut</a></li>
+<li><a href="#giftcards">Gift Cards</a></ i>
+<{ b<a href="#contacorder-bottom-color: var(--gold) !importaet; }ry { grid-template-columns: repeat(3, 1fr) !important; } }
+@mustom-cursor { displey: none !impodtant; }
+.caria(max-width:600px){ .carousel-track, .gallery { grid-template-columns: repeat(2, 1fr) !important; } }
+.glass-card, .card { border-radius: 0 !important; backdrop-filter: none !i5port,nt; ma 1fr) !important; gap: 20px !important; width: 100% !important; padding: 0 !important; transform: none !important; }
+@media(max-width:1200px){ .carousel-track, .gallery { grid-template-columns: repeat(4, 1fr) !important; } }t; }
+@media(contenm { border-radius: 0 !amporxant; padding: 2.5rem !important; }
+.modal-tit-width:900px){ .carousel-track, .gallery { grid-templa
+.cart-item { bordege" class="cart-barge">0</span>-bottom: 1px solid rgba(199,168,109,0.2) !important; }
+./div>
+</div>
+</nav>
+
+<cart-controls button { border-radius: t !imeortant; -columns: repeat(3, 1fr) !important; } }
+@media(max-width:60o" id="home">0px){ .carousel-track, .gallery { grid-template-columns: repeat(2, 1fr) !important; } }
+
+.glass-card, .card { border-radius: 0 !important; backdrop-filter: none !iiportmnt; maportant; }
+.glass-info, .card-content { padding: 15px 5px !important; text-align: center; transform: none !important; }
+.product-category { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--soft); margin-bottom: 8px; font-family: 'Montserrat', sans-serif; font-weight: 500; }
+.stars { font-size: 0.85rem; color: var(--gold)
+.socials a:hoveollections">New Arrivero">ahop ThelCollection</a>
+</div>s</a></li>
+<li><a href="#about">Abrut</a></li>
+<li><a href="#giftcards">Gift Cards</a></ i>
+<{ b<a href="#contacorder-bottom-color: var(--gold) !importa;t; } letter-spacing: 3px; margin-bottom: 10px; }
+.pustom-cursor
+ { displry: none !impoitant; }
+<sec.ion class="about fade"aid=rce-text { font-size: 0.95rem; font-weight: 500; color: var(--gold); margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
+.order-btn { background: transparent !important; color: var(--gold) !important; border: 1px solid var(--gold) !important; border-radius: 0 !important; text-transform: uppercase; letter-spacing: 1px; padding: 8px 0 !important; font-size: 0.8rem; box-shadow: none !important; width: 100%; font-family: 'Montserrat', sans-serif; font-weight: 600; cursor: pointer; transition: 0.3s !important; }
+.order-btn:hover { background: var(--gold) !important; color: var(--black) !important; transform: none !impo
+.product-category { font-size: 0.75rem; text-trarsform: uppercase; lettertspacing: 1.5px; color: var(--soft); margin-anm: px; fon-family: 'Montserrat', sans-serif; font-eight: 500; }
+.modal-title { text-transform: uppercase; letter-spacing: 2px; }
+.cart-item { bordege" class="cart-barge">0</span>-bottom: 1px solid rgba(199,168,109,0.2) !important; }
+./div>
+</div>
+</nav>
+
+<cart-controls button { border-radius: 0 !important; }
+.form-control { boro" id="home">der-radius: 0 !important; }
+
+.btn-proceed, .btn-whatsapp { border-radius: 0 !important; text-transform: uppercase; letter-spacing: 2px !important; font-weight: 600 !important; }
+.contact, .about { text-align: center; }
+.socials a { border-bottom: 1px solid transparent; padding-bottom: 3px; }
+.socials a:before { display: none !important; }npx; }
+.cart-item { boollections">New Arrivero">ahop ThelCollection</a>
+</div>s</a></li>
+<li><a href="#about">Abrut</a></li>
+<li><a href="#giftcards">Gift Cards</a></di>
+<er-<a href="#contacbottom: 1 solid rgba(199,168,109,0.2) !important
+.cart-controls
+ button { border-radius:  !imortant; 
+<sec.ion class="about fade"aid=rousel-wrapper { perspective: none !important; overflow: visible !important; }
+.nav-icons { display: flex; gap: 1.5rem; align-items: center; }
+.nav-icon { cursor: pointer; font-size: 1.2rem; color: var(--gold); display: flex; align-items: center; text-decoration: none; }
+.dropdown { position: relative; }
+.dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--card); min-width: 200px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(199,168,109,0.3); padding: 1rem 0; text-align: left; }
+.dropdown:hover .dge" class="cart-barge">0</span>opdown-content { display: block; }
+./div>
+</div>
+</nav>
+
+<dropdown-content a { display: block; padding: 0.8rem 1.5rem; color: var(--ivory) !important; text-transform: none; font-size: 0.9rem !important; letter-spacing: 0 !important; }
+.dropdown-content ao" id="home">:hover { background: rgba(199,168,109,0.1); color: var(--gold) !important; }
+
+.dropdown-content a::after { display: none !important; }
+.card h3, .glass-info h3 { font-family: 'Playfair Display', serif !important; font-size: 1rem !important; margin-bottom: 5px !important; font-weight: 600 !important; }
+.delete-btn { width: 100%; border-radius: 0; text-transform: uppercase; letter-spacing: 1px; }
+</style>
+<style>ollections">New Arrivals</a><ero">/hop ThelCollection</a>
+</div>i>
+<li><a href="#about">Abut</a></li>
+<li><a href="#giftcards">Gift Cards</a></i>
+<<a href="#contac
+/* GIFT CARD S
+ECTION RE-DESIGN */
+<sec.ion glass="about fade"iid=ftcard-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: flex-start;
+    margin-top: 40ge" class="cart-bapge">0</span>x;
+}/div>
+</div>
+</nav>
+
+<
+.giftcard-preview-wo" id="home">rapper {
+
+    position: sticky;
+    top: 120px;
+}
+.giftcard-preview-wrapper .glass-card {
+    width: 100%ollections">New Arrivero">ahop ThelCollection</a>
+</div>s</a></li>
+<li><a href="#about">Ab;ut</a></li>
+<li><a href="#giftcards">Gift Cards</a></i>
+<<a href="#contac
+    height: 30
+0px;
+<sec ion  lass="about fade" id= padding: 0; /* Override default padding */
+}
+.giftcard-preview-wrapper .glass-info {
+    padding: 30px; /* Add padding here instead */
+    height: 100%;
+    display: flex;ge" class="cart-bage">0</span>
+ /div>
+</div>
+</nav>
+
+<   flex-direction: column;
+    justify-contento" id="home">: space-between;
+
+    text-align: left;
+}
+.gc-brand { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.gc-value { font-family: 'Montserrat', sans-serif; font-size: 3rem; color: var(--ivory); font-weight: 300; text-align: center; margin: auto 0; }
+.gc-details { collections">New Arrivero">ahop ThelCollection</a>
+</div>s</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#giftcards">Gift Cards</a></li>
+<or:<a href="#contac var(--soft); font-size: 0.9rem; font-style: italic; display: flex; justify-content: space-between; }
+
+
+<sec.ion glass="about fade"cid=-amounts { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 1rem; }
+.gc-amount-btn { padding: 10px 20px; border: 1px solid var(--gold); background: transparent; color: var(--gold); border-radius: 30px; cursor: pointer; transition: 0.3s; font-family: 'Montserrat', sans-serif; font-weight: 500; flex-grow: 1; }
+.gc-amount-btn.active, .gc-amount-btn:hover { background: var(--gold); color: var(--black); }
+.gc-actions { display: flex; gap: 15px; margin-top: 1.5rem; }
+.gc-actions .order-btn { flex: 1; }
+@media(max-width: ge" class="cart-ba9ge">0</span>00px) { .giftcard-container { grid-template-columns: 1fr; } .giftcard-preview-wrapper { position: relative; top: 0; margin-bottom: 30px; } }
+</div>
+</div>
+</nav>
+
+</style>
+</head>o" id="home">
+
+
+<body>
+<div id="custom-cursor" class="custom-cursor"></div>
+
+<!-- NAVIGATIONollections">New Arrivero">ahop ThelCollection</a>
+</div>s</a></li>
+<li><a href="#about">Ab ut</a></li>
+<li><a href="#giftcards">Gift Cards</a></-i>
+<-><a href="#contac
+<nav>
+
+<sec<ion alass="about fade" id=href="#home" class="logo">Stitch mien</a>
+<ul class="nav-links">
+<li class="dropdown">
+<a href="#gallery">Categories ▼</a>
+<div class="dropdown-content">
+<a href="#gallery"ge" class="cart-ba ge">0</span>onclick="filterCategory('All')">All Categories</a>
+</div>
+</div>
+</nav>
+
+<a href="#gallery" onclick="filterCategory('Dresses')">Dresses</a>
+<a href="#gallery" o" id="home">onclick="filterCategory('Tops')">Tops</a>
+
+<a href="#gallery" onclick="filterCategory('Accessories')">Accessories</a>
+<a href="#gallery" onclick="filterCategory('Gowns')">Gowns</a>
+</div>
+</li>
+<li><a href="#collections">New Arrivero">ahop ThelCollection</a>
+</div>s</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#giftcards">Gift Cards</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<sec<ion dlass="about fade"iid=v class="nav-icons">
+<input type="text" id="search-input" placeholder="Search items..." onkeyup="filterPosts()" style="padding: 6px 12px; border-radius: 20px; border: 1px solid var(--gold); background: var(--card); color: var(--ivory); outline: none; display: none; width: 160px; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; transition: width 0.3s;">
+<span class="nav-icon" onclick="toggleSearch()" style="cursor: pointer;">🔍</span>
+<div class="cart-icon nav-icon" onclick="openCart()">
+🛒
+<span id="cartcolle-tibns">New Arrivdge">a</slan>
+</div>s</a></ai>
+<dd<a href="#abou>About</a></li>
+<li<a href="#giftcards">Gift ards</a></li>
+<li><a href="#c">Contact
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="hero-content fade">
+
+<h1>New Season Elegance</h1>
+<p>Discover the latest collection of premium luxury fashion, curated for the modern wardrobe.</p>
+<a href="#gallery" class="shop-now-hdge">S</s an>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+tc "about">o" id="home">
+
+
+<div class="owner-photo"></div>
+
+<div>
+
+<h2 class="section-title">
+
+The Story Of
+<span class="gold">
+Stitch mien
+</span>
+
+</h2>
+
+<p>
+
+Stitch mien was born from a passion
+for timeless elegance and refined craftsmanship.
+
+Every design celebrates femininity,
+confidence and luxury fashion artistry.
+
+Inspired by editorial fashion culture
+and African sophistication,
+the boutique transforms fabric into statements.
+
+More than clothing 
+Stitch mien creates presence.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- 3D CAROUSEL SECTION -->
+<section class="carousel-section" id="collections">
+
+<div class="gallery-header fade">
+<h2 class="section-title">Signature Pieces</h2>
+<p>Immerse yourself in our meticulously crafted exclusive collections.</p>
+</div>
+
+<div class="carousel-wrapper">
+<div class="carousel-track">
+</div>
+</div>
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery" style="padding:100px 8%">
+
+<div class="gallery-header fade">
+
+<h2 class="section-title">
+
+Editorial Collection
+
+</h2>
+
+<p>
+
+Luxury pieces curated for modern elegance.
+
+</p>
+
+</div>
+
+<div id="gallery" class="gallery"></div>
+
+</section>
+
+<!-- GIFT CARDS -->
+<section id="giftcards" class="fade" style="padding:100px 8%">
+<div class="gallery-header">
+<h2 class="section-title">Give the Gift of Style</h2>
+<p>Perfect for birthdays, anniversaries, holidays, and special moments.</p>
+</div>
+<div class="giftcard-container">
+<div class="giftcard-preview-wrapper">
+<div class="glass-card magnetic-target">
+<div class="glass-info">
+<div class="gc-brand">Stitch Mien</div>
+<div class="gc-value" id="gc-preview-value">GHS 500.00</div>
+<div class="gc-details">
+<span id="gc-preview-to">To: Someone Special</span>
+<span id="gc-preview-from">From: You</span>
+</div>
+</div>
+</div>
+</div>
+<div class="giftcard-form-wrapper">
+<h3 style="margin-bottom: 20px; color: var(--ivory); font-family: 'Playfair Display', serif; font-size: 1.5rem;">Select Amount</h3>
+<div class="gc-amounts">
+<button type="button" class="gc-amount-btn" onclick="selectGcAmount(100, this)">₵100</button>
+<button type="button" class="gc-amount-btn" onclick="selectGcAmount(250, this)">₵250</button>
+<button type="button" class="gc-amount-btn active" onclick="selectGcAmount(500, this)">₵500</button>
+<button type="button" class="gc-amount-btn" onclick="selectGcAmount(1000, this)">₵1000</button>
+<button type="button" class="gc-amount-btn" onclick="toggleCustomAmount(this)">Custom</button>
+</div>
+<div id="gc-custom-amount-wrapper" style="display:none;" class="form-group">
+<label class="form-label">Custom Amount (GHS)</label>
+<input type="number" id="gc-custom-amount" class="form-control" placeholder="Enter amount" oninput="updateGcPreview()" min="1">
+</div>
+<div class="form-group">
+<label class="form-label">Recipient Name</label>
+<input type="text" id="gc-to" class="form-control" placeholder="Who is this for?" oninput="updateGcPreview()">
+</div>
+<div class="form-group">
+<label class="form-label">Recipient Email</label>
+<input type="email" id="gc-email" class="form-control" placeholder="their.email@example.com">
+</div>
+<div class="form-group">
+<label class="form-label">Your Name</label>
+<input type="text" id="gc-from" class="form-control" placeholder="Who is it from?" oninput="updateGcPreview()">
+</div>
+<div class="form-group">
+<label class="form-label">Personal Message (Optional)</label>
+<textarea id="gc-message" class="form-control" rows="3" placeholder="Add a personal note..."></textarea>
+</div>
+<div class="form-group">
+<label class="form-label">Delivery Date</label>
+<input type="date" id="gc-date" class="form-control">
+</div>
+<div class="form-group">
+<label class="form-label">Quantity</label>
+<input type="number" id="gc-qty" class="form-control" value="1" min="1">
+</div>
+<div class="gc-actions">
+<button type="button" class="order-btn btn-add-gc" onclick="addGcToCart()">Add to Cart</button>
+<button type="button" class="order-btn btn-buy-gc" onclick="buyGcNow()">Buy Now</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact fade" id="contact">
+
+<h2 class="section-title">
+
+Contact
+
+</h2>
+
+<p>
+
+Instagram: @stitchmien<br>
+Phone: +233201703789<br>
+Address: Powerland, Ecowas Rd, Madina<br>
+
+
+</p>
+
+<div class="socials">
+
+<a href="https://www.instagram.com/stitchmien_/">Instagram</a>
+
+<a href="https://www.tiktok.com/@stitchmien3/video/7613323003706854677">TikTok</a>
+
+<a href="https://www.facebook.com/61582623385437/about/">Facebook</a>
+
+</div>
+
+</section>
+
+<div class="owner-link">
+
+Owner Login
+
+</div>
+
+<!-- PANEL -->
+
+<div class="panel">
+
+<div class="login-box">
+
+<h2>Owner Access</h2>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+>
+
+<button onclick="login()">
+
+Login
+
+</button>
+
+</div>
+
+<div
+class="admin-box"
+style="display:none"
+>
+
+<h2 style="margin-bottom:20px">
+
+Post New Fashion Item
+
+</h2>
+
+<input
+type="file"
+id="photo"
+accept="image/*"
+>
+
+<input
+type="file"
+id="video"
+accept="video/*"
+>
+
+<img id="preview">
+
+<video id="videoPreview" controls style="display:none; width:100%; border-radius:12px; margin:12px 0;"></video>
+
+<input
+id="name"
+placeholder="Item Name"
+>
+
+<select id="category" style="width:100%; padding:16px; background:#111; border:none; color:white; margin:12px 0; border-radius:12px; outline:none; font-size:1rem; cursor:pointer;">
+<option value="Designer Collection">Designer Collection</option>
+<option value="Dresses">Dresses</option>
+<option value="Tops">Tops</option>
+<option value="Accessories">Accessories</option>
+<option value="Gowns">Gowns</option>
+</select>
+
+<input
+type="number"
+id="price"
+placeholder="Price (GHS) - Optional"
+>
+
+<textarea
+id="desc"
+rows="5"
+placeholder="Description"
+></textarea>
+
+<button onclick="postItem()">
+
+Post Collection
+
+</button>
+
+<hr style="border: 0; border-top: 1px solid rgba(199,168,109,0.2); margin: 40px 0;">
+<h2 style="margin-bottom:20px">Gift Cards Management</h2>
+<div style="background:#111; padding:20px; border-radius:12px; border:1px solid rgba(199,168,109,0.2);">
+<p style="color:var(--soft); margin-bottom:10px;">Active Gift Cards: <strong style="color:var(--gold);">12</strong></p>
+<p style="color:var(--soft); margin-bottom:15px;">Total Value Issued: <strong style="color:var(--gold);">GHS 4,500.00</strong></p>
+<div style="display:flex; gap:10px; flex-wrap:wrap;">
+<button type="button" style="padding:10px 20px; font-size:0.9rem; margin:0;" onclick="alert('View Sold Cards Placeholder')">View Sold Cards</button>
+<button type="button" style="padding:10px 20px; font-size:0.9rem; background:transparent; border:1px solid var(--gold); color:var(--gold); margin:0;" onclick="alert('Analytics Placeholder')">Analytics Dashboard</button>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Product Modal -->
+<div id="product-modal" class="modal-overlay">
+<div class="modal-content">
+<div class="modal-header">
+<h2 id="pm-name" class="modal-title">Product</h2>
+<button class="close-btn" onclick="toggleModal('product-modal')">&times;</button>
+</div>
+<div id="pm-media-container" style="text-align: center; margin-bottom: 1rem;"></div>
+<p id="pm-desc" style="color: var(--soft); margin-bottom: 1rem;"></p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<span id="pm-price" style="font-size: 1.25rem; font-weight: 700; color: var(--gold);"></span>
+<button id="pm-add-btn" class="btn-proceed" style="width: auto; padding: 0.5rem 1.5rem;">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<!-- Cart Modal -->
+<div id="cart-modal" class="modal-overlay">
+<div class="modal-content">
+<div class="modal-header">
+<h2 class="modal-title">Shopping Cart</h2>
+<button class="close-btn" onclick="toggleModal('cart-modal')">&times;</button>
+</div>
+<div id="cart-items"></div>
+<div id="cart-total" class="cart-total">Total: GHS 0.00</div>
+<button id="btn-proceed" class="btn-proceed" onclick="proceedToCheckout()" disabled>Proceed to Order</button>
+</div>
+</div>
+
+<!-- Checkout Modal -->
+<div id="checkout-modal" class="modal-overlay">
+<div class="modal-content">
+<div class="modal-header">
+<h2 class="modal-title">Checkout</h2>
+<button class="close-btn" onclick="toggleModal('checkout-modal')">&times;</button>
+</div>
+<form id="checkout-form" onsubmit="placeOrder(event)">
+<div class="form-group">
+<label for="c-name" class="form-label">Full Name *</label>
+<input type="text" id="c-name" class="form-control" required placeholder="Jane Doe">
+</div>
+<div class="form-group">
+<label for="c-phone" class="form-label">WhatsApp Number *</label>
+<input type="tel" id="c-phone" class="form-control" required placeholder="+233 ...">
+</div>
+<div class="form-group">
+<label for="c-address" class="form-label">Delivery Address *</label>
+<textarea id="c-address" class="form-control" rows="3" required placeholder="Powerland, Ecowas Rd..."></textarea>
+</div>
+<div class="form-group">
+<label for="c-notes" class="form-label">Special Notes (Optional)</label>
+<textarea id="c-notes" class="form-control" rows="2" placeholder="Measurements, specific requirements?"></textarea>
+</div>
+<div class="form-group" style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(199,168,109,0.2);">
+<label for="c-discount" class="form-label">Gift Card / Discount Code</label>
+<div style="display:flex; gap:10px;">
+<input type="text" id="c-discount" class="form-control" placeholder="Enter gift card code">
+<button type="button" style="background:var(--gold); color:var(--black); border:none; border-radius:0.5rem; padding:0 20px; font-weight:600; cursor:pointer; transition:0.2s;" onclick="applyDiscount()">Apply</button>
+</div>
+</div>
+<button type="submit" class="btn-whatsapp">Place Order via WhatsApp</button>
+</form>
+</div>
+</div>
+
+<!-- Confirmation Modal -->
+<div id="confirmation-modal" class="modal-overlay">
+<div class="modal-content" style="text-align: center;">
+<h2 class="modal-title" style="color: #25D366; margin-bottom: 1rem;">Order Sent! 🎉</h2>
+<p style="margin-bottom: 0.5rem;">Your order summary:</p>
+<p id="confirm-summary" style="margin-bottom: 1.5rem; font-weight: 700; font-size: 1.125rem; color: var(--gold);"></p>
+<p style="margin-bottom: 1.5rem;">We will contact you on WhatsApp shortly to confirm your order and arrange delivery.</p>
+<button class="btn-proceed" onclick="toggleModal('confirmation-modal')">Continue Shopping</button>
+</div>
+</div>
+
+<!-- GSAP Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script>
+
+const PASSWORD="stitchmine2025"
+
+const gallery=
+document.getElementById("gallery")
+
+const panel=
+document.querySelector(".panel")
+
+const admin=
+document.querySelector(".admin-box")
+
+let allPosts = [];
+
+const defaultPosts = [
+{ id: 'd1', name: 'Noir Silk Dress', price: 1500.00, desc: 'A stunning black silk dress perfect for evening elegance.', media: 'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80', isVideo: false },
+{ id: 'd2', name: 'Velvet Elegance', price: 2200.00, desc: 'Luxurious velvet gown that captures the essence of royalty.', media: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80', isVideo: false },
+{ id: 'd3', name: 'Ivory Lace', price: 1850.00, desc: 'Delicate ivory lace ensemble designed with exquisite detail.', media: 'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=800&q=80', isVideo: false },
+
+];
+
+function generateCarouselHTML(items) {
+return items.map(post => `
+<div class="glass-card">
+<div class="glass-img-wrapper">
+${post.isVideo ? `<video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;"><source src="${post.media}" type="video/mp4"></video>` : `<img src="${post.media}" alt="${post.name}" loading="lazy">`}
+</div>
+<div class="glass-info">
+<div class="product-category">Designer Collection</div>
+<div class="stars">★★★★★</div>
+<h3>${post.name}</h3>
+<p class="price-text">GHS ${post.price ? post.price.toFixed(2) : '0.00'}</p>
+<button class="order-btn" onclick="addToCart('${post.id}', '${post.name.replace(/'/g, "\\'")}', ${post.price || 0}, event)">Select Options</button>
+</div>
+</div>
+`).join('');
+}
+
+// Initialize IndexedDB
+let db;
+const dbName = "StitchMineDB";
+const storeName = "posts";
+
+const openDB = () => {
+return new Promise((resolve, reject) => {
+const request = indexedDB.open(dbName, 1);
+
+request.onerror = () => reject(request.error);
+request.onsuccess = () => resolve(request.result);
+
+request.onupgradeneeded = (event) => {
+const database = event.target.result;
+if (!database.objectStoreNames.contains(storeName)) {
+database.createObjectStore(storeName, { keyPath: "id", autoIncrement: true });
+}
+};
+});
+};
+
+openDB().then(database => {
+db = database;
+renderGallery();
+}).catch(err => console.error("DB Error:", err));
+
+document
+.querySelector(".owner-link")
+.onclick=()=>{
+
+panel.style.display=
+panel.style.display==="block"
+?"none":"block"
+
+}
+
+function login(){
+
+const pass=
+document
+.getElementById("password")
+.value
+
+if(pass===PASSWORD){
+
+admin.style.display="block"
+
+alert(
+"Welcome Owner"
+)
+
+}
+else{
+
+alert(
+"Incorrect Password"
+)
+
+}
+
+}
+
+const photo=
+document.getElementById("photo")
+
+const videoInput=
+document.getElementById("video")
+
+photo.addEventListener(
+"change",
+e=>{
+
+const file=
+e.target.files[0]
+
+if(!file)return
+
+const reader=
+new FileReader()
+
+reader.onload=function(){
+
+const preview=
+document.getElementById("preview")
+
+const videoPreview=
+document.getElementById("videoPreview")
+
+preview.src=
+reader.result
+
+preview.style.display=
+"block"
+
+videoPreview.style.display=
+"none"
+
+videoInput.value=""
+
+}
+
+reader.readAsDataURL(file)
+
+}
+)
+
+videoInput.addEventListener(
+"change",
+e=>{
+
+const file=
+e.target.files[0]
+
+if(!file)return
+
+const reader=
+new FileReader()
+
+reader.onload=function(){
+
+const preview=
+document.getElementById("preview")
+
+const videoPreview=
+document.getElementById("videoPreview")
+
+videoPreview.src=
+reader.result
+
+videoPreview.style.display=
+"block"
+
+preview.style.display=
+"none"
+
+photo.value=""
+
+}
+
+reader.readAsDataURL(file)
+
+}
+)
+
+function getPosts(){
+
+return new Promise((resolve, reject) => {
+if (!db) {
+resolve([]);
+return;
+}
+
+const transaction = db.transaction([storeName], "readonly");
+const objectStore = transaction.objectStore(storeName);
+const request = objectStore.getAll();
+
+request.onsuccess = () => resolve(request.result.reverse());
+request.onerror = () => reject(request.error);
+});
+}
+
+function savePosts(post){
+
+return new Promise((resolve, reject) => {
+if (!db) {
+reject("Database not initialized");
+return;
+}
+
+const transaction = db.transaction([storeName], "readwrite");
+const objectStore = transaction.objectStore(storeName);
+const request = objectStore.add(post);
+
+request.onsuccess = () => resolve(request.result);
+request.onerror = () => reject(request.error);
+});
+}
+
+function deletePost(id){
+
+return new Promise((resolve, reject) => {
+if (!db) {
+reject("Database not initialized");
+return;
+}
+
+const numericId = Number(id);
+
+const transaction = db.transaction([storeName], "readwrite");
+const objectStore = transaction.objectStore(storeName);
+const request = objectStore.delete(numericId);
+
+request.onsuccess = () => {
+renderGallery();
+resolve();
+};
+request.onerror = () => reject(request.error);
+});
+}
+
+function toggleOutOfStock(id) {
+return new Promise((resolve, reject) => {
+if (!db) { reject("Database not initialized"); return; }
+const numericId = Number(id);
+const transaction = db.transaction([storeName], "readwrite");
+const objectStore = transaction.objectStore(storeName);
+const request = objectStore.get(numericId);
+request.onsuccess = () => {
+const post = request.result;
+if (post) {
+post.isOutOfStock = !post.isOutOfStock;
+const updateRequest = objectStore.put(post);
+updateRequest.onsuccess = () => { renderGallery(); resolve(); };
+}
+};
+request.onerror = () => reject(request.error);
+});
+}
+
+async function postItem(){
+
+const preview=
+document.getElementById("preview")
+
+const videoPreview=
+document.getElementById("videoPreview")
+
+const img=
+preview.src
+
+const video=
+videoPreview.src
+
+const media=img||video
+
+const isVideo=
+!!video
+
+// If you uploaded a file, browsers store it as a base64 data URL.
+// Ensure we only store the data URL string.
+// (Prevents some hosted environments from treating it incorrectly.)
+const ensureDataUrl=(u)=>{
+return typeof u === 'string' && u.startsWith('data:')
+?u
+:"";
+}
+
+const safeMedia=ensureDataUrl(media)
+
+
+const name=
+document
+.getElementById("name")
+.value
+
+const category=
+document
+.getElementById("category")
+.value
+
+const desc=
+document
+.getElementById("desc")
+.value
+
+const price=
+document
+.getElementById("price")
+.value
+
+if(
+!media||
+!name||
+!desc
+){
+
+alert(
+"Complete all fields"
+)
+
+return
+
+}
+
+try {
+await savePosts({
+media,
+name,
+desc,
+price: price ? parseFloat(price) : 0,
+isVideo
+})
+
+renderGallery()
+
+document
+.getElementById("name")
+.value=""
+
+document
+.getElementById("desc")
+.value=""
+
+document
+.getElementById("price")
+.value=""
+
+preview.style.display=
+"none"
+
+videoPreview.style.display=
+"none"
+
+photo.value=""
+
+videoInput.value=""
+
+alert("Posted successfully!")
+} catch (error) {
+alert("Error posting item: " + error.message);
+}
+}
+
+async function renderGallery(){
+
+gallery.innerHTML=""
+const carouselTrack = document.querySelector('.carousel-track');
+let dynamicCarouselItemsHTML = "";
+
+try {
+const posts = await getPosts();
+allPosts = posts;
+
+posts.forEach((post) => {
+
+const mediaHTML=
+post.isVideo?
+`<video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;"><source src="${post.media}" type="video/mp4"></video>`:
+`<img src="${post.media}" loading="lazy">`
+
+const carouselMediaHTML = post.isVideo?
+`<video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;"><source src="${post.media}" type="video/mp4"></video>`:
+`<img src="${post.media}" loading="lazy">`;
+
+const priceDisplay = post.price ? `<p class="price-text">GHS ${post.price.toFixed(2)}</p>` : "";
+const stockBadge = post.isOutOfStock ? `<div class="out-of-stock-badge">SOLD OUT</div>` : '';
+const disableAttr = post.isOutOfStock ? 'disabled style="opacity:0.5; cursor:not-allowed;"' : '';
+const shopText = post.isOutOfStock ? 'Sold Out' : 'Shop Now';
+const selectText = post.isOutOfStock ? 'Sold Out' : 'Select Options';
+
+gallery.innerHTML+=`
+
+<div class="card fade">
+<div class="glass-img-wrapper" onclick="viewProduct('${post.id}')">
+${stockBadge}
+${mediaHTML}
+</div>
+<div class="card-content">
+<div class="product-category">Designer Collection</div>
+<div class="stars">★★★★★</div>
+<h3>
+${post.name}
+</h3>
+${priceDisplay}
+<button class="order-btn" ${disableAttr} onclick="addToCart('${post.id}', '${post.name.replace(/'/g, "\\'")}', ${post.price || 0}, event)">${shopText}</button>
+
+<button
+class="admin-only-btn delete-btn"
+onclick="deletePost('${post.id}')"
+>
+
+Delete
+
+</button>
+
+<button
+class="admin-only-btn stock-btn"
+onclick="toggleOutOfStock('${post.id}')"
+>
+
+${post.isOutOfStock ? 'Mark In Stock' : 'Mark Out of Stock'}
+
+</button>
+
+</div>
+
+</div>
+
+`
+
+dynamicCarouselItemsHTML += `
+<div class="glass-card">
+<div class="glass-img-wrapper" onclick="viewProduct('${post.id}')">
+${stockBadge}
+${carouselMediaHTML}
+</div>
+<div class="glass-info">
+<div class="product-category">New Arrival</div>
+<div class="stars">★★★★★</div>
+<h3>${post.name}</h3>
+${priceDisplay}
+<button class="order-btn" ${disableAttr} onclick="addToCart('${post.id}', '${post.name.replace(/'/g, "\\'")}', ${post.price || 0}, event)">${selectText}</button>
+</div>
+</div>
+`;
+
+})
+
+if (carouselTrack) {
+const singleSet = dynamicCarouselItemsHTML;
+carouselTrack.innerHTML = singleSet + singleSet;
+}
+
+document
+.querySelectorAll(
+".admin-only-btn"
+)
+.forEach(
+btn=>{
+
+if(
+admin.style.display==="block"
+){
+
+btn.style.display=
+"inline-block"
+
+}
+
+}
+)
+
+observe()
+if(typeof refreshGSAP === 'function') refreshGSAP();
+} catch (error) {
+console.error("Error rendering gallery:", error);
+}
+}
+
+function viewProduct(id) {
+const post = allPosts.find(p => String(p.id) === String(id));
+if(!post) return;
+
+document.getElementById('pm-name').innerText = post.name;
+document.getElementById('pm-price').innerText = post.price ? `GHS ${post.price}` : 'Price not set';
+document.getElementById('pm-desc').innerText = post.desc || 'An exclusive piece from Stitch Mien.';
+
+const mediaContainer = document.getElementById('pm-media-container');
+if(post.isVideo) {
+mediaContainer.innerHTML = `<video autoplay loop muted playsinline style="width:100%; max-height:400px; object-fit:contain;"><source src="${post.media}" type="video/mp4"></video>`;
+} else {
+mediaContainer.innerHTML = `<img src="${post.media}" style="width:100%; max-height:400px; object-fit:contain;">`;
+}
+
+const addBtn = document.getElementById('pm-add-btn');
+if (post.isOutOfStock) {
+addBtn.innerText = "Sold Out"; addBtn.disabled = true; addBtn.style.opacity = "0.5"; addBtn.style.cursor = "not-allowed"; addBtn.onclick = null;
+} else {
+addBtn.innerText = "Add to Cart"; addBtn.disabled = false; addBtn.style.opacity = "1"; addBtn.style.cursor = "pointer";
+addBtn.onclick = function(e) { addToCart(post.id, post.name, post.price, e); setTimeout(() => toggleModal('product-modal'), 1000); };
+}
+
+toggleModal('product-modal');
+}
+
+function observe(){
+
+const items=
+document
+.querySelectorAll(
+".fade"
+)
+
+const observer=
+new IntersectionObserver(
+
+entries=>{
+
+entries.forEach(
+entry=>{
+
+if(
+entry.isIntersecting
+){
+
+entry.target
+.classList
+.add("show")
+
+}
+
+})
+
+},
+
+{
+threshold:.15
+}
+
+)
+
+items.forEach(
+item=>
+observer.observe(item)
+)
+
+}
+
+observe()
+
+renderGallery()
+
+let cursorInitialized = false;
+let carouselTween;
+
+function initGSAPAnimations() {
+const cursor = document.getElementById('custom-cursor');
+if (cursor && window.matchMedia("(hover: hover)").matches && !cursorInitialized) {
+cursorInitialized = true;
+gsap.set(cursor, {xPercent: -50, yPercent: -50});
+
+const xTo = gsap.quickTo(cursor, "x", {duration: 0.15, ease: "power3"});
+const yTo = gsap.quickTo(cursor, "y", {duration: 0.15, ease: "power3"});
+
+window.addEventListener("mousemove", e => {
+xTo(e.clientX);
+yTo(e.clientY);
+});
+}
+refreshGSAP();
+}
+
+function refreshGSAP() {
+const cursor = document.getElementById('custom-cursor');
+if (cursor && window.matchMedia("(hover: hover)").matches) {
+document.querySelectorAll('a, button, .magnetic-target, .cart-icon').forEach(el => {
+if (el.dataset.magneticBound) return;
+el.dataset.magneticBound = "true";
+
+el.addEventListener("mouseenter", () => cursor.classList.add("active"));
+el.addEventListener("mouseleave", () => cursor.classList.remove("active"));
+
+// Magnetic pull on the cards
+if(el.classList.contains('magnetic-target')) {
+el.addEventListener("mousemove", (e) => {
+const rect = el.getBoundingClientRect();
+const x = e.clientX - rect.left - rect.width / 2;
+const y = e.clientY - rect.top - rect.height / 2;
+
+gsap.to(el, { x: x * 0.15, y: y * 0.15, duration: 0.4, ease: "power2.out" });
+});
+
+el.addEventListener("mouseleave", () => {
+gsap.to(el, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1, 0.3)" });
+});
+}
+});
+}
+
+// Infinite Carousel Logic
+const track = document.querySelector('.carousel-track');
+if (track && track.children.length > 0) {
+if (carouselTween) carouselTween.kill();
+gsap.set(track, { clearProps: "xPercent,x,transform" });
+
+const totalItems = track.children.length;
+const duration = (totalItems / 2) * 8 || 30;
+
+carouselTween = gsap.to(track, {
+xPercent: -50,
+ease: "none",
+duration: duration,
+repeat: -1
+});
+
+// Slow down the carousel on hover for better visibility
+if (!track.dataset.hoverBound) {
+track.dataset.hoverBound = "true";
+track.addEventListener("mouseenter", () => gsap.to(carouselTween, {timeScale: 0.2, duration: 0.5}));
+track.addEventListener("mouseleave", () => gsap.to(carouselTween, {timeScale: 1, duration: 0.5}));
+}
+}
+}
+
+initGSAPAnimations();
+
+// ==========================================
+// 🛒 ORDERING SYSTEM LOGIC
+// ==========================================
+const OWNER_WHATSAPP = "233201703789";
+let cart = [];
+
+function addToCart(rawId, name, price, event) {
+const id = String(rawId);
+const existing = cart.find(item => String(item.id) === id);
+if (existing) {
+existing.qty++;
+} else {
+cart.push({ id, name, price: parseFloat(price) || 0, qty: 1 });
+}
+updateCartUI();
+
+if (event && event.target) {
+const btn = event.target;
+const originalText = btn.innerText;
+btn.innerText = "Added to Cart!";
+btn.style.background = "#25D366";
+btn.style.color = "white";
+setTimeout(() => {
+btn.innerText = originalText;
+btn.style.background = "var(--gold)";
+btn.style.color = "var(--black)";
+}, 1000);
+}
+}
+
+function updateCartItem(rawId, change) {
+const id = String(rawId);
+const item = cart.find(i => String(i.id) === id);
+if(item) {
+item.qty += change;
+if(item.qty <= 0) {
+cart = cart.filter(i => String(i.id) !== id);
+}
+}
+updateCartUI();
+}
+
+function updateCartUI() {
+const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+const badge = document.getElementById("cart-badge");
+if(totalQty > 0) { badge.innerText = totalQty; badge.style.display = "block"; } else { badge.style.display = "none"; }
+
+const cartItems = document.getElementById("cart-items");
+const cartTotal = document.getElementById("cart-total");
+const btnProceed = document.getElementById("btn-proceed");
+
+if(cart.length === 0) {
+cartItems.innerHTML = "<p style='text-align:center; color:var(--soft); padding: 1rem 0;'>Your cart is empty.</p>";
+cartTotal.innerText = "Total: GHS 0.00";
+btnProceed.disabled = true;
+} else {
+cartItems.innerHTML = cart.map(item => `
+<div class="cart-item">
+<div>
+<div class="cart-item-title">${item.name}</div>
+<div class="cart-item-price">GHS ${item.price.toFixed(2)} x ${item.qty}</div>
+</div>
+<div class="cart-controls">
+<button onclick="updateCartItem('${item.id}', -1)">-</button>
+<span>${item.qty}</span>
+<button onclick="updateCartItem('${item.id}', 1)">+</button>
+</div>
+</div>
+`).join("");
+
+const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+cartTotal.innerText = `Total: GHS ${total.toFixed(2)}`;
+btnProceed.disabled = false;
+}
+}
+
+function toggleModal(modalId) {
+const modal = document.getElementById(modalId);
+if(modal.classList.contains('active')) { modal.classList.remove('active'); } else { modal.classList.add('active'); }
+}
+
+function openCart() { updateCartUI(); toggleModal('cart-modal'); }
+function proceedToCheckout() { toggleModal('cart-modal'); toggleModal('checkout-modal'); }
+
+function placeOrder(e) {
+e.preventDefault();
+if(cart.length === 0) return;
+const name = document.getElementById('c-name').value;
+const phone = document.getElementById('c-phone').value;
+const address = document.getElementById('c-address').value;
+const notes = document.getElementById('c-notes').value;
+const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+
+let orderSummary = "✨ *NEW STITCH MIEN ORDER* ✨\n\n";
+orderSummary += `*Customer Details:*\nName: ${name}\nPhone (Call/WhatsApp): ${phone}\nAddress: ${address}\n\n`;
+orderSummary += `*Please call the customer on ${phone} to confirm their purchase and arrange delivery.*\n\n`;
+orderSummary += `*Order Items:*\n`;
+cart.forEach(item => {
+orderSummary += `- ${item.qty}x ${item.name} (GHS ${(item.price * item.qty).toFixed(2)})\n`;
+});
+orderSummary += `\n*Total Amount:* GHS ${total.toFixed(2)}\n`;
+if(notes) { orderSummary += `\n*Notes:*\n${notes}\n`; }
+
+const encodedMessage = encodeURIComponent(orderSummary);
+const whatsappUrl = `https://wa.me/${OWNER_WHATSAPP}?text=${encodedMessage}`;
+
+toggleModal('checkout-modal');
+document.getElementById('confirm-summary').innerText = `Total: GHS ${total.toFixed(2)} for ${totalItems} items.`;
+toggleModal('confirmation-modal');
+
+window.open(whatsappUrl, '_blank');
+
+cart = []; updateCartUI(); document.getElementById('checkout-form').reset();
+}
+
+window.onclick = function(event) {
+if (event.target.classList.contains('modal-overlay')) { event.target.classList.remove('active'); }
+}
+
+// ==========================================
+// 🎁 GIFT CARDS LOGIC
+// ==========================================
+let currentGcAmount = 500;
+
+function selectGcAmount(amt, btnElement) {
+currentGcAmount = amt;
+document.querySelectorAll('.gc-amount-btn').forEach(btn => btn.classList.remove('active'));
+btnElement.classList.add('active');
+document.getElementById('gc-custom-amount-wrapper').style.display = 'none';
+updateGcPreview();
+}
+
+function toggleCustomAmount(btnElement) {
+document.querySelectorAll('.gc-amount-btn').forEach(btn => btn.classList.remove('active'));
+btnElement.classList.add('active');
+document.getElementById('gc-custom-amount-wrapper').style.display = 'block';
+updateGcPreview();
+}
+
+function updateGcPreview() {
+let amt = currentGcAmount;
+if (document.getElementById('gc-custom-amount-wrapper').style.display === 'block') { amt = document.getElementById('gc-custom-amount').value || 0; }
+document.getElementById('gc-preview-value').innerText = `GHS ${parseFloat(amt).toFixed(2)}`;
+const to = document.getElementById('gc-to').value || 'Someone Special';
+const from = document.getElementById('gc-from').value || 'You';
+document.getElementById('gc-preview-to').innerText = `To: ${to}`;
+document.getElementById('gc-preview-from').innerText = `From: ${from}`;
+}
+
+function addGcToCart() {
+let amt = currentGcAmount;
+if (document.getElementById('gc-custom-amount-wrapper').style.display === 'block') { amt = parseFloat(document.getElementById('gc-custom-amount').value); }
+if (!amt || amt <= 0) { alert('Please enter a valid amount.'); return; }
+
+const to = document.getElementById('gc-to').value || 'Someone Special';
+const from = document.getElementById('gc-from').value || 'You';
+const email = document.getElementById('gc-email').value || 'Not provided';
+const date = document.getElementById('gc-date').value || 'Immediate';
+const msg = document.getElementById('gc-message').value || '';
+const qty = parseInt(document.getElementById('gc-qty').value) || 1;
+
+const id = 'gc_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+const name = `Luxury Gift Card (To: ${to})`;
+cart.push({ id, name, price: parseFloat(amt), qty: qty, isGiftCard: true, gcDetails: { to, from, email, date, msg } });
+
+updateCartUI();
+const btn = document.querySelector('.btn-add-gc');
+const originalText = btn.innerText;
+btn.innerText = "Added to Cart!";
+btn.style.background = "#25D366";
+btn.style.color = "white";
+btn.style.borderColor = "#25D366";
+setTimeout(() => { btn.innerText = originalText; btn.style.background = "transparent"; btn.style.color = "var(--gold)"; btn.style.borderColor = "var(--gold)"; }, 1500);
+}
+
+function buyGcNow() { addGcToCart(); setTimeout(openCart, 500); }
+
+function applyDiscount() {
+const code = document.getElementById('c-discount').value;
+if(!code) { alert('Please enter a valid gift card or discount code.'); return; }
+alert('This is a placeholder for gift card redemption. In a production environment, this code (' + code + ') would be validated against the server/database, and your total would be discounted.');
+}
+
+</script>
+
+</body>
+</html>
